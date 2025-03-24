@@ -1,6 +1,6 @@
 public class Cart {
-    public static final int MAX_NUMBERS_ORDERED = 20;  // max size of cart
-    private DigitalVideoDisc[] itemsOrdered = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
+    public static final int MAX_NUMBERS_ORDERED = 20;
+    private final DigitalVideoDisc[] itemsOrdered = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
     private int qtyOrdered = 0;
 
     public void addDigitalVideoDisc(DigitalVideoDisc disc) {
@@ -15,6 +15,22 @@ public class Cart {
             System.out.println("Cannot add. The cart is full!");
         }
     }
+
+    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
+        for (DigitalVideoDisc dvd : dvdList)
+            addDigitalVideoDisc(dvd);
+
+    }
+
+//    public void addDigitalVideoDisc(DigitalVideoDisc... dvds) {
+//        for (DigitalVideoDisc dvd : dvds) addDigitalVideoDisc(dvd);
+//    }
+
+    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
+        addDigitalVideoDisc(dvd1); // reuse existing method to add first DVD
+        addDigitalVideoDisc(dvd2); // reuse existing method to add second DVD
+    }
+
 
     public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
         boolean found = false;
