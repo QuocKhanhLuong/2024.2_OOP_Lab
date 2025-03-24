@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a80e5a4d-b49b-4d96-a8a1-bd7e46f03f5d" name="Changes" comment="Changes files in assignment folder">
-      <change beforePath="$PROJECT_DIR$/../../Lab01/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab01/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cart.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +41,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -53,6 +54,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Aims.executor": "Run",
+    "Application.TestPassingParameter.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -63,9 +65,17 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="AimsProject" />
@@ -131,7 +141,8 @@
       <updated>1742546119615</updated>
       <workItem from="1742546120797" duration="4268000" />
       <workItem from="1742801718614" duration="1518000" />
-      <workItem from="1742803250573" duration="301000" />
+      <workItem from="1742803250573" duration="736000" />
+      <workItem from="1742804391287" duration="2607000" />
     </task>
     <task id="LOCAL-00001" summary="Changes files in assignment folder">
       <option name="closed" value="true" />
@@ -141,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742802832306</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Changes files in assignment folder">
+      <option name="closed" value="true" />
+      <created>1742803590869</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742803590869</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
