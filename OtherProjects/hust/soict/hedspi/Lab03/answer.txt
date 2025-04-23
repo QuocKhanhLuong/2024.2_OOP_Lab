@@ -1,0 +1,23 @@
+Câu hỏi từ Phần 17:
+
+1. Lớp nào nên triển khai giao diện Comparable?
+
+Lớp Media nên triển khai giao diện Comparable vì chúng ta muốn so sánh các đối tượng Media trong giỏ hàng.
+
+2. Trong các lớp đó, bạn nên triển khai phương thức compareTo() như thế nào để phản ánh thứ tự chúng ta muốn?
+
+Đối với phương thức compareTo(), chúng ta cần thực hiện so sánh chính theo tiêu đề và phụ theo giá. Trước tiên 
+chúng ta sẽ so sánh tiêu đề sử dụng phương thức compareTo của String, và nếu tiêu đề giống nhau, so sánh theo giá.
+
+3. Chúng ta có thể có hai quy tắc sắp xếp cho mục (theo tiêu đề rồi giá và theo giá rồi tiêu đề) nếu chúng ta sử 
+dụng cách tiếp cận giao diện Comparable này không?
+
+Không, với giao diện Comparable, một lớp chỉ có thể có một thứ tự tự nhiên được xác định bởi phương thức compareTo(). 
+Để hỗ trợ nhiều quy tắc sắp xếp, chúng ta cần sử dụng cách tiếp cận giao diện Comparator.
+
+4. Giả sử các DVD có quy tắc sắp xếp khác với các loại phương tiện khác, tức là theo tiêu đề, sau đó là chiều dài giảm dần, 
+sau đó là giá. Bạn sẽ sửa đổi mã của mình như thế nào để cho phép điều này?
+
+Để cho phép DVD có quy tắc sắp xếp khác (theo tiêu đề, chiều dài giảm dần, sau đó là giá), chúng ta cần ghi đè phương thức compareTo() 
+trong lớp DigitalVideoDisc để cung cấp logic sắp xếp cụ thể của nó, khác với logic trong lớp Media. 
+Hoặc, chúng ta có thể tạo các bộ so sánh DVD cụ thể sử dụng giao diện Comparator.
