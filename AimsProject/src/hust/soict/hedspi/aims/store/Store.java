@@ -5,6 +5,11 @@ import java.util.ArrayList;
 
 public class Store {
     private static final int MAX_ITEMS = 100;
+
+    public ArrayList<Media> getItemsInStore() {
+        return itemsInStore;
+    }
+
     @SuppressWarnings("FieldMayBeFinal")
     private ArrayList<Media> itemsInStore = new ArrayList<>();
 
@@ -50,4 +55,6 @@ public class Store {
     public int getItemCount() {
         return itemsInStore.size();
     }
+
+
 }

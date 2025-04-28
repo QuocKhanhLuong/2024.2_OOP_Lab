@@ -77,11 +77,7 @@ public class Aims {
                             }
                             default -> System.out.println("Invalid choice. Please try again.");
                         }
-                        // TODO: Implement see a media's details
-                        // TODO: Implement add a media to cart
-                        // TODO: Implement play a media
-                        // TODO: Implement see current cart from store menu
-                        // Back to main menu
+                    
                                             } while (storeChoice != 0);
                 }
                 case 2 -> {
@@ -91,10 +87,6 @@ public class Aims {
                 case 0 -> System.out.println("Exiting AIMS. Goodbye!");
                 default -> System.out.println("Invalid choice. Please try again.");
             }
-            // Update store
-            // TODO: Implement store update logic
-            // See current cart
-            // TODO: Implement cart view and navigation
                     } while (choice != 0);
         sc.close();
     }
