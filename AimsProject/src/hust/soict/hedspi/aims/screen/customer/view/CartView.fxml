@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.soict.hedspi.aims.screen.customer.controller.CartController">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <!-- Menu Bar -->
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="Options">
+                  <items>
+                    <MenuItem fx:id="viewStoreMenuItem" mnemonicParsing="false" onAction="#viewStore" text="View Store" />
+                    <MenuItem fx:id="viewCartMenuItem" mnemonicParsing="false" onAction="#viewCart" text="View Cart" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            
+            <!-- Title -->
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <Label text="Shopping Cart">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+               </padding>
+            </HBox>
+            
+            <!-- Search Bar -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Filter Cart:" />
+                  <TextField fx:id="filterField" prefWidth="300.0" promptText="Enter title to filter..." />
+                  <Button fx:id="filterButton" mnemonicParsing="false" onAction="#filterCart" text="Filter" />
+                  <Button fx:id="clearFilterButton" mnemonicParsing="false" onAction="#clearFilter" text="Clear Filter" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <!-- Cart Table -->
+            <TableView fx:id="cartTable" VBox.vgrow="ALWAYS">
+              <columns>
+                <TableColumn fx:id="titleColumn" prefWidth="200.0" text="Title">
+                   <cellValueFactory>
+                      <PropertyValueFactory property="title" />
+                   </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="categoryColumn" prefWidth="120.0" text="Category">
+                   <cellValueFactory>
+                      <PropertyValueFactory property="category" />
+                   </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="costColumn" prefWidth="80.0" text="Cost">
+                   <cellValueFactory>
+                      <PropertyValueFactory property="cost" />
+                   </cellValueFactory>
+                </TableColumn>
+              </columns>
+            </TableView>
+            
+            <!-- Bottom Controls -->
+            <HBox alignment="CENTER_LEFT" spacing="20.0">
+               <children>
+                  <Label fx:id="totalCostLabel" text="Total: $0.00">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="playButton" mnemonicParsing="false" onAction="#playMedia" text="Play" />
+                  <Button fx:id="removeButton" mnemonicParsing="false" onAction="#removeFromCart" text="Remove" />
+                  <Button fx:id="placeOrderButton" mnemonicParsing="false" onAction="#placeOrder" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Place Order" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="0.0" left="20.0" right="20.0" top="0.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane> 
