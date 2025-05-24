@@ -1,30 +1,66 @@
 package hust.soict.hedspi.aims.cart;
 
 import hust.soict.hedspi.aims.media.Media;
-import java.util.ArrayList;
+import hust.soict.hedspi.aims.exception.CartFullException;
+import hust.soict.hedspi.aims.exception.ItemNotFoundException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;
     @SuppressWarnings("FieldMayBeFinal")
-    private ArrayList<Media> itemsOrdered = new ArrayList<>();
+    private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 
-    public void addMedia(Media media) {
-        if (itemsOrdered.size() < MAX_NUMBERS_ORDERED) {
-            itemsOrdered.add(media);
-            System.out.println("The media \"" + media.getTitle() + "\" has been added.");
-            if (itemsOrdered.size() == MAX_NUMBERS_ORDERED) {
-                System.out.println("The cart is almost full.");
-            }
-        } else {
-            System.out.println("Cannot add. The cart is full!");
+    public ObservableList<Media> getItemsOrdered() {
+        return itemsOrdered;
+    }
+
+    public void addMedia(Media media) throws CartFullException {
+        if (media == null) {
+            throw new IllegalArgumentException("ERROR: Media cannot be null!");
+        }
+        
+        if (itemsOrdered.size() >= MAX_NUMBERS_ORDERED) {
+            throw new CartFullException("ERROR: The cart is full. Cannot add \"" + media.getTitle() + "\"!");
+        }
+        
+        itemsOrdered.add(media);
+        System.out.println("The media \"" + media.getTitle() + "\" has been added.");
+        if (itemsOrdered.size() == MAX_NUMBERS_ORDERED) {
+            System.out.println("The cart is now full.");
         }
     }
 
-    public void removeMedia(Media media) {
-        if (itemsOrdered.remove(media)) {
-            System.out.println("The media \"" + media.getTitle() + "\" has been removed.");
-        } else {
-            System.out.println("The media \"" + media.getTitle() + "\" was not found in the cart.");
+    public void removeMedia(Media media) throws ItemNotFoundException {
+        if (media == null) {
+            throw new IllegalArgumentException("ERROR: Media cannot be null!");
+        }
+        
+        if (!itemsOrdered.remove(media)) {
+            throw new ItemNotFoundException("ERROR: The media \"" + media.getTitle() + "\" was not found in the cart!");
+        }
+        
+        System.out.println("The media \"" + media.getTitle() + "\" has been removed.");
+    }
+
+    // Safe versions of add/remove methods for GUI use
+    public boolean addMediaSafe(Media media) {
+        try {
+            addMedia(media);
+            return true;
+        } catch (CartFullException e) {
+            System.err.println(e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean removeMediaSafe(Media media) {
+        try {
+            removeMedia(media);
+            return true;
+        } catch (ItemNotFoundException e) {
+            System.err.println(e.getMessage());
+            return false;
         }
     }
 
